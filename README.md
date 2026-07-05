@@ -36,7 +36,7 @@ src/build_notebook.py      notebook generator (reproducibility)
 
 ```bash
 pip install -r requirements.txt
-jupyter nbconvert --to notebook --execute --inplace notebooks/market_eda.ipynb
+jupyter nbconvert --to notebook --execute notebooks/market_eda.ipynb --output market_eda_executed.ipynb
 ```
 
 ## Provenance & honesty notes
