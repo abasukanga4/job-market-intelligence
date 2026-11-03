@@ -1,6 +1,6 @@
 # UK job-posting snapshot: analysis and quality checks
 
-I collected this sample while looking for work and wanted to understand which roles appeared in my feed. The first version put too much weight on posting counts and model-generated fit scores. This version checks the data first and draws a narrower conclusion.
+I collected this sample while looking for work. I wanted to understand which roles appeared in my feed and whether the data was reliable enough to guide my search. The analysis starts with quality checks, then looks at the patterns the sample can support.
 
 **Scope:** 519 records first seen from 2026-05-26 to 2026-06-10. This is a dated case study, not a current vacancy list or a representative survey of the UK market.
 
