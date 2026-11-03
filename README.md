@@ -1,46 +1,57 @@
-# UK Data-Role Job Market Intelligence
+# UK job-posting snapshot: analysis and quality checks
 
-**Question:** Which data-role lane offers a career-changer the most realistic entry path in the UK right now — and does my own application behaviour match what the market actually posts?
+I collected this sample while looking for work. I wanted to understand which roles appeared in my feed and whether the data was reliable enough to guide my search. The analysis starts with quality checks, then looks at the patterns the sample can support.
 
-**Data:** 519 UK job postings, collected 26 May – 10 Jun 2026 by a scraping pipeline I built while job-hunting (Indeed + LinkedIn → deduplicated SQLite → LLM fit-scoring against my CV → ranked daily digest). This repo contains a sanitized snapshot — descriptions and personal scoring rationale stripped.
+**Scope:** 519 records first seen from 2026-05-26 to 2026-06-10. This is a dated case study, not a current vacancy list or a representative survey of the UK market.
 
-**Approach:**
-- Normalize messy free-text fields (workplace model arrives as `On-Site` / `On-site` / `Hybrid/Onsite`…) and classify titles into comparable role lanes
-- Exploratory analysis: lane volume, fit-score distributions, geography, feed noise, ingest cadence
-- Written market memo with the decision the data drove
+![Data-quality checks](figures/quality.png)
 
-**Findings:**
-- **Data Analyst is the largest defined lane — 120 postings (23%), 1.7× Data Scientist (69).** The entry-path volume is in DA, not DS/ML.
-- **121 postings (23%) scored high-fit (≥70) against my CV in just 16 days** — opportunity supply is not the constraint; application volume is.
-- **42% of postings are hybrid or remote** after normalization; London leads (124) but Manchester, Bristol and Leeds carry real volume.
-- **~14% of a raw scraped feed is gig platforms and recruiter aggregators**, not direct employers — automated job-search tooling needs a noise filter before scoring means anything.
+## Key findings
 
-**Tools:** Python (pandas, matplotlib) · SQLite/SQL · LLM-assisted scoring pipeline
+- Data Analyst has 119 classified rows, compared with 69 for Data Scientist. Other has 142 rows, so it is important not to call DA the largest category overall.
+- 441 posting dates are missing (84.97%). First seen is a collection timestamp, not a substitute for the posting date.
+- 105 groups repeat the same source, title, company and location. There are 126 rows beyond the first in those groups. These might be duplicates, reposts or separate openings; I have not silently removed them.
+- 113 rows explicitly say hybrid or remote (21.77%). Another 105 have mixed arrangements. Treating those as flexible produces 42.0%, which explains why the earlier figure was too broad for a practical job search.
+- 121 rows have historical model scores of at least 70. That describes an uncalibrated scoring system, not the number of jobs I could realistically obtain.
 
-[EDA notebook](notebooks/market_eda.ipynb) · [1-page market memo](reports/market-memo.md) · [snapshot export script](src/export_snapshot.py)
+## What I conclude
 
----
+DA is worth investigating, but these data do not establish the easiest entry route, the cause of unsuccessful applications or the right application volume. I would check actual requirements and practical arrangements, then track interview outcomes before changing strategy. Agency adverts are not automatically invalid.
 
-## Repository structure
+The useful result is a clearer description of the feed and a list of checks needed before using it to make decisions.
 
-```
-data/jobs_snapshot.csv     sanitized posting snapshot (519 rows)
-notebooks/market_eda.ipynb cleaning + EDA, executed with outputs
-figures/                   charts rendered by the notebook
-reports/market-memo.md     1-page insight memo
-src/export_snapshot.py     pipeline-DB → public snapshot export
-src/build_notebook.py      notebook generator (reproducibility)
-```
+## Reproduce locally
 
-## Reproduce
+Use Python 3.12. The lock file pins package versions and hashes, with platform markers for macOS and Linux. Run from the repository root:
 
 ```bash
-pip install -r requirements.txt
-jupyter nbconvert --to notebook --execute notebooks/market_eda.ipynb --output market_eda_executed.ipynb
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install --require-hashes -r requirements.lock
+python -m unittest discover -s tests -v
+python -m src.analyse --figures figures
+python -m src.write_report
+python -m src.build_notebook
+python -m ipykernel install --sys-prefix --name job-market-python
+python -m nbconvert --to notebook --execute notebooks/market_eda.ipynb --inplace --ExecutePreprocessor.kernel_name=job-market-python --ExecutePreprocessor.timeout=180
 ```
 
-## Provenance & honesty notes
+The analysis uses the supplied CSV. It does not scrape, call an LLM, send messages or require private credentials. To resolve dependencies again, use `uv pip compile requirements.in --python-version 3.12 --universal --generate-hashes --output-file requirements.lock` and review the changes.
 
-- The collection pipeline (scraper, dedup, scoring, Gmail digest) runs privately as part of a larger automation project; this repo publishes the analysis layer over its output.
-- 16-day window, two sources, Indeed-skewed (495/24): a live pipeline snapshot, not a census of the UK market.
-- The fit score is a personal LLM heuristic scoring postings against *my* CV — useful for funnel decisions, not an objective market measure.
+## Explore the work
+
+- [Executed notebook](notebooks/market_eda.ipynb)
+- [Short decision memo](reports/market-memo.md)
+- [Computed metrics](reports/generated/metrics.json)
+- [Quality summary](reports/generated/quality-summary.md)
+- [Potential repeated records](reports/generated/potential_repeated_groups.csv)
+- [Methodology and data dictionary](docs/methodology.md)
+- [Validation tests](tests/test_analysis.py)
+
+`src/analysis.py` holds the validation and transformation rules. `src/analyse.py` writes reports and charts. The notebook uses the same functions; README and memo numbers come from the same metrics file. A GitHub Actions workflow runs the tests and notebook on Python 3.12. Local verification is separate from a successful hosted CI run.
+
+## Source and limits
+
+The private collection pipeline is outside this repository. The public snapshot contains metadata and historical personal fit scores, not full descriptions, CV text or scoring rationales. Source counts are {'indeed': 495, 'linkedin': 24}; the sample is strongly Indeed-skewed.
+
+Stable source advert IDs, collection queries, scorer versions, work-rights evidence and hiring outcomes are unavailable here. No deduplication, taxonomy accuracy or interview-prediction claim is made. The code has an MIT licence; it does not grant rights over third-party job data. The metadata is retained for this case study, with redistribution permissions unverified. See the methodology before reusing it.

@@ -1,0 +1,103 @@
+{
+  "ambiguous_arrangement_rows": 105,
+  "broad_flexible_including_mixed_percent": 42.0,
+  "calendar_days": 16,
+  "collection_end": "2026-06-10",
+  "collection_start": "2026-05-26",
+  "data_analyst_senior_or_mixed_title_rows": 11,
+  "data_limit": "Convenience sample from a private collection pipeline, not a census or current vacancy list.",
+  "days_with_ingestion": 12,
+  "eligibility_status": "Not assessed: descriptions, required years, work rights and commute evidence absent.",
+  "explicit_hybrid_remote_percent": 21.77,
+  "explicit_hybrid_remote_rows": 113,
+  "ingestion_by_day": {
+    "2026-05-26": 9,
+    "2026-05-27": 24,
+    "2026-05-28": 50,
+    "2026-05-29": 0,
+    "2026-05-30": 0,
+    "2026-05-31": 0,
+    "2026-06-01": 30,
+    "2026-06-02": 83,
+    "2026-06-03": 29,
+    "2026-06-04": 21,
+    "2026-06-05": 214,
+    "2026-06-06": 8,
+    "2026-06-07": 25,
+    "2026-06-08": 12,
+    "2026-06-09": 0,
+    "2026-06-10": 14
+  },
+  "lane_counts": {
+    "Data Analyst": 119,
+    "Data Engineer": 23,
+    "Data Scientist": 69,
+    "ML/AI Engineer": 86,
+    "Other": 142,
+    "Software/Other Eng": 80
+  },
+  "missing_location_rows": 0,
+  "missing_posted_percent": 84.97,
+  "missing_posted_rows": 441,
+  "missing_score_rows": 0,
+  "model_scored_70_by_lane": {
+    "Data Analyst": 33,
+    "Data Engineer": 3,
+    "Data Scientist": 37,
+    "ML/AI Engineer": 26,
+    "Other": 11,
+    "Software/Other Eng": 11
+  },
+  "poster_type_status": "Not verified. Recruiting agencies are not automatically invalid adverts.",
+  "potential_repeated_groups": 105,
+  "repeat_key_sensitivity": {
+    "interpretation": "First observed representative per composite key; not verified unique vacancies",
+    "lane_counts": {
+      "Data Analyst": 101,
+      "Data Engineer": 17,
+      "Data Scientist": 47,
+      "ML/AI Engineer": 59,
+      "Other": 109,
+      "Software/Other Eng": 60
+    },
+    "representative_rows": 393
+  },
+  "row_count": 519,
+  "rows_beyond_first_in_potential_groups": 126,
+  "score_means_by_lane": {
+    "Data Analyst": 60.92,
+    "Data Engineer": 51.35,
+    "Data Scientist": 64.57,
+    "ML/AI Engineer": 61.1,
+    "Other": 41.92,
+    "Software/Other Eng": 50.75
+  },
+  "score_status": "Historical personal LLM heuristic; model/prompt/CV version and hiring calibration unavailable.",
+  "score_threshold_counts": {
+    "60": 252,
+    "70": 121,
+    "80": 36
+  },
+  "scored_rows": 519,
+  "seniority_title_signals": {
+    "Junior signal": 114,
+    "Mixed": 1,
+    "Senior signal": 74,
+    "Unknown": 330
+  },
+  "snapshot_sha256": "f9b0f457988aa405b5045175c4a99a5774d06c750d179bc0322bea9fcc58cfb3",
+  "source_counts": {
+    "indeed": 495,
+    "linkedin": 24
+  },
+  "taxonomy_status": "Title rules have synthetic regression cases; no empirical gold-label validation.",
+  "timestamp_timezone": "Input validated as timezone-naive; original timezone remains unknown.",
+  "unique_internal_ids": 519,
+  "workplace_counts": {
+    "Hybrid": 56,
+    "Mixed hybrid/on-site": 105,
+    "On-site": 281,
+    "Remote": 57,
+    "Unknown": 20
+  }
+}

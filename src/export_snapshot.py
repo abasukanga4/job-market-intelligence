@@ -5,16 +5,18 @@ reasoning, full descriptions, application notes), derives the posting date,
 and writes a clean CSV the EDA notebook runs against.
 
 Usage:
-    python3 src/export_snapshot.py --db /path/to/jobs.db --out data/jobs_snapshot.csv
+    python -m src.export_snapshot --db /path/to/jobs.db --out /reviewed/path/snapshot.csv
 """
 
 import argparse
 import json
 import sqlite3
+import tempfile
 from pathlib import Path
 from typing import Optional
 
 import pandas as pd
+from .analysis import read_snapshot, safe_cell
 
 PUBLIC_COLUMNS = [
     "id",
@@ -40,19 +42,33 @@ def derive_posted(raw_json: Optional[str]) -> Optional[str]:
 
 
 def export(db_path: Path, out_path: Path) -> pd.DataFrame:
-    con = sqlite3.connect(db_path)
-    jobs = pd.read_sql_query(
-        "SELECT id, source, title, company, location, workplace_type, "
-        "score, status, first_seen, raw_json FROM jobs",
-        con,
-    )
-    con.close()
+    if db_path.resolve() == out_path.resolve():
+        raise ValueError('Output must not overwrite the database')
+    con = sqlite3.connect(db_path.resolve().as_uri() + '?mode=ro', uri=True)
+    try:
+        jobs = pd.read_sql_query(
+            "SELECT id, source, title, company, location, workplace_type, "
+            "score, status, first_seen, raw_json FROM jobs ORDER BY id", con,
+        )
+    finally:
+        con.close()
 
     jobs["posted"] = jobs["raw_json"].map(derive_posted)
     snapshot = jobs[PUBLIC_COLUMNS].copy()
+    for column in snapshot.select_dtypes(include=['object']).columns:
+        snapshot[column] = snapshot[column].map(lambda v: safe_cell(v) if isinstance(v, str) else v)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    snapshot.to_csv(out_path, index=False)
+    temp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=out_path.parent, suffix='.csv', delete=False) as temporary:
+            temp_path = Path(temporary.name)
+        snapshot.to_csv(temp_path, index=False)
+        read_snapshot(temp_path)
+        temp_path.replace(out_path)
+    finally:
+        if temp_path is not None:
+            temp_path.unlink(missing_ok=True)
     return snapshot
 
 

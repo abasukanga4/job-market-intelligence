@@ -1,0 +1,106 @@
+source,title,company,location,csv_lines,row_count
+indeed,ai engineer,jd sports fashion,bury,50;253,2
+indeed,ai engineer (dup),jd sports fashion,bury,371;381;387,3
+indeed,ai engineer – agentic ai (dup),kubrick group,london,300;339;346,3
+indeed,"ai/ml & prompt engineer llm, rag & voice agent",quantumloopai,london,59;298,2
+indeed,ai/ml engineer,roke manor research,romsey,58;252,2
+indeed,ai/ml engineer (dup),information tech consultants,united kingdom,406;422;439;454,4
+indeed,asset trading analyst,anheuser-busch,london,238;351,2
+indeed,"assistant manager, ai independent validation (model risk office)",lloyds banking group,halifax,113;382,2
+indeed,backend software engineer python data r&d,client server,cambridge,237;249,2
+indeed,backend software engineer python data r&d (dup),client server,cambridge,284;457;459,3
+indeed,business analyst and consultant,glass door design tech ltd,bristol,193;448,2
+indeed,business intelligence developer,cder group ltd,london,178;367,2
+indeed,cheminformatics data scientist,lubrizol,hazelwood,243;267,2
+indeed,computational scientist - ai trainer,dataannotation,leeds,137;402,2
+indeed,data analyst,aivra health,london,362;517,2
+indeed,data analyst,gsc grays,colburn,203;320,2
+indeed,data analyst,interact software,manchester,182;395,2
+indeed,data analyst,interactive investor,manchester,181;393,2
+indeed,data analyst,mime,london,109;364,2
+indeed,data analyst,mountain peak technology ltd,remote,106;501,2
+indeed,data analyst,pobl tech,cardiff,192;447,2
+indeed,data analyst,stratops ai & cloud ltd,east ham,81;363,2
+indeed,data business analyst,evolution money,manchester,185;394,2
+indeed,data engineer,artlogic,london,79;349,2
+indeed,data engineer,betfred,manchester,91;255,2
+indeed,data engineer,bicycle therapeutics,cambridge,57;460,2
+indeed,data science consultant,metrica recruitment,london,130;277,2
+indeed,data science consultant – ai & machine learning,metrica recruitment,london,111;261,2
+indeed,data scientist & machine learning researcher,raytheon,south gloucestershire,93;435,2
+indeed,data scientist - credit eligibility,m-kopa,manchester,114;379,2
+indeed,data scientist - neural net forecasting,tesco,welwyn garden city,51;254,2
+indeed,data scientist – credit risk & ai innovation,infact,london,7;258,2
+indeed,data scientist – credit risk & ai innovation (dup),infact,london,269;328,2
+indeed,data scientist — data engineering & applied ai,nationwide utilities,london,227;274,2
+indeed,data strategy/governance consultant,metrica recruitment,manchester,115;370,2
+indeed,embedded systems engineer - ai innovation,safran,cwmbran,140;438,2
+indeed,epidemiologist - ai trainer,dataannotation,cambridge,141;453,2
+indeed,finance data quality analyst - ftc,aerfin,newport,188;443,2
+indeed,geophysicist - ai trainer,dataannotation,rochdale,131;268,2
+indeed,graduate - data analyst,network rail,york,39;417,2
+indeed,graduate machine learning engineer,compare the market,london,35;289,2
+indeed,graduate programme 2027: data scientist and analyst,revolut,london,41;334,2
+indeed,"graduate technical business analyst, data & ai, london",acturis ltd,london,102;308,2
+indeed,java engineer,wissen technology private limited,glasgow,147;292,2
+indeed,junior application software engineer,one big circle,bristol,148;295,2
+indeed,junior brokerage operations analyst,cbcx group limited,london,160;311,2
+indeed,junior brokerage operations analyst (dup),cbcx group limited,london,350;361,2
+indeed,junior business intelligence analyst,systematica investments,london,87;356,2
+indeed,junior business systems analyst,system c,leeds,62;418,2
+indeed,junior data analyst,retail-fcl,basingstoke,88;310,2
+indeed,junior data analyst,runshaw college,leyland,397;506,2
+indeed,junior data engineer,bunzl uk & ireland,isleworth,112;340,2
+indeed,junior data scientist,information tech consultants,london,3;42,2
+indeed,junior data scientist (dup),information tech consultants,greater london,271;324;330,3
+indeed,junior data scientist uk,satalia,london,38;250,2
+indeed,junior data scientist uk (dup),satalia,london,264;272;296;325;333;342,6
+indeed,junior engineer,tracer cloud inc,london,150;347,2
+indeed,junior finance analyst,prepworld,northfleet,239;357,2
+indeed,junior it support engineer,allica bank,london,151;348,2
+indeed,junior machine learning engineer,information tech consultants,greater london,2;43;259,3
+indeed,junior machine learning engineer (dup),information tech consultants,greater london,270;279;329;338,4
+indeed,junior platform engineer,milltechfx,london,152;299,2
+indeed,junior software engineer / computer science graduate (remote),ctw content protection,united kingdom,68;293,2
+indeed,junior technical operations analyst,kroo,london,163;358,2
+indeed,junior/graduate data scientist,friend mts,birmingham,101;251,2
+indeed,junior/graduate data scientist (dup),friend mts,birmingham,263;273;280;288;297,5
+indeed,lead data and reporting scientist,pennon group,exeter,70;265,2
+indeed,lead data and reporting scientist,south west water,exeter,217;266,2
+indeed,lead data engineer,ptsg,altrincham,77;373,2
+indeed,lead software engineer,jpmorganchase,glasgow,144;285,2
+indeed,machine learning engineer,krotos,united kingdom,60;385,2
+indeed,machine learning engineer (dup),krotos,united kingdom,408;424;441;456,4
+indeed,machine learning engineer (ktp associate),university of bath,bath,85;436,2
+indeed,machine learning engineer - ai-driven automation,la fosse,wandsworth,123;262,2
+indeed,machine learning engineer intern (100% remote),tether operations limited,manchester,134;378,2
+indeed,mi data analyst,standard life plc,edinburgh,48;425,2
+indeed,operations research analyst - ai trainer,dataannotation,oxford,173;321,2
+indeed,political scientist - ai trainer,dataannotation,gillingham,125;275,2
+indeed,product & governance analyst - insurance,uk staffing group,chester,220;312,2
+indeed,product analyst - ai trainer,dataannotation,york,138;322,2
+indeed,product analyst - ai trainer (dup),dataannotation,york,403;409,2
+indeed,quantitative ai trainer (dup),dataannotation,united kingdom,407;423;440;455,4
+indeed,quantitative ai trainer - ai trainer,dataannotation,united kingdom,139;384,2
+indeed,quantitative reasoning analyst - ai trainer,dataannotation,watford,129;276,2
+indeed,quantitative reasoning analyst - ai trainer (dup),dataannotation,watford,335;360,2
+indeed,reporting and insight analyst,clear business,sale,97;317,2
+indeed,senior ai engineer,insight international uk ltd,edinburgh,420;492,2
+indeed,senior data engineer,betfred,manchester,73;376,2
+indeed,senior data strategy/governance consultant,metrica recruitment,manchester,154;257,2
+indeed,senior full stack engineer,synextra ltd,birchwood,155;390,2
+indeed,senior machine learning engineer,wallarm,london,78;290,2
+indeed,senior reporting and insights analyst,clear business,sale,174;323,2
+indeed,senior research software engineer,infleqtion,kidlington,145;287,2
+indeed,senior risk pricing analyst,somerset bridge group,bristol,187;451,2
+indeed,software engineer,hamiltonian dynamics,manchester,118;286,2
+indeed,software engineer (dup),hamiltonian dynamics,manchester,375;389;401,3
+indeed,software engineer (mid and senior levels),one big circle,bristol,142;278,2
+indeed,"software engineer - data, lakehouse and ai data platform engineer - analyst/associate - london",goldman sachs,london,36;303,2
+indeed,software engineering intern,pear vc,london,146;291,2
+indeed,sql analyst,ecotricity group limited,stroud,156;305,2
+indeed,statistical analyst - ai trainer,dataannotation,rotherham,177;315,2
+indeed,technical business analyst (data & reporting),hireful,manchester,186;396,2
+indeed,"technical business analyst, london, data & ai",acturis ltd,london,107;359,2
+indeed,treasury & reporting analyst,ayvens,bristol,194;449,2
+indeed,workforce optimisation analyst,nexus vehicle rental,pudsey,99;410,2
